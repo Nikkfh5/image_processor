@@ -99,6 +99,17 @@ cmake ..
 cmake --build ..
 
 ### Пример
+
+Перевод в оттенки серого
+./image_processor photos/cat.bmp out/cat_gs.bmp -gs
+
+Обрезка до 400×300 и размытие
+./image_processor in.bmp out.bmp -crop 400 300 -blur 2.0
+
+Пикселизация + негатив
+./image_processor in.bmp out.bmp -pixelate 12 -neg
+
+
 `./image_processor input.bmp /tmp/output.bmp -crop 800 600 -gs -blur 0.5`
 
 В этом примере
@@ -122,17 +133,6 @@ cmake --build ..
 значений этого цвета в соседних пикселях в соответствии с матрицей. При этом целевому пикселю
 соответствует центральный элемент матрицы.
 
-
-## Примеры
-
-Перевод в оттенки серого
-./image_processor photos/cat.bmp out/cat_gs.bmp -gs
-
-Обрезка до 400×300 и размытие
-./image_processor in.bmp out.bmp -crop 400 300 -blur 2.0
-
-Пикселизация + негатив
-./image_processor in.bmp out.bmp -pixelate 12 -neg
 
 Создан как учебный проект, но легко расширяется под более сложную обработку изображений.
 
