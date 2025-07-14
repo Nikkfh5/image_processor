@@ -44,17 +44,32 @@ $$
 #### Negative (-neg)
 Преобразует изображение в негатив по формуле
 
-![encoding](https://latex.codecogs.com/svg.image?R'%20=%201%20-%20R,%20G'%20=%201%20-%20G,%20B'%20=%201%20-%20B)
+$$
+R' = 1 - R, \quad G' = 1 - G, \quad B' = 1 - B
+$$
 
 #### Sharpening (-sharp)
 Повышение резкости. Достигается применением матрицы
 
-![encoding](https://latex.codecogs.com/svg.image?%5Cbegin%7Bbmatrix%7D%20&%20-1%20&%20%20%5C%5C-1%20&%205%20&%20-1%20%5C%5C%20&%20-1%20&%20%20%5C%5C%5Cend%7Bbmatrix%7D)
+$$
+\begin{bmatrix}
+  & -1 &  \\
+-1 & 5 & -1 \\
+  & -1 & 
+\end{bmatrix}
+$$
 
 #### Edge Detection (-edge threshold)
 Выделение границ. Изображение переводится в оттенки серого и применяется матрица
 
-![encoding](https://latex.codecogs.com/svg.image?%5Cbegin%7Bbmatrix%7D%20&%20-1%20&%20%20%5C%5C-1%20&%204%20&%20-1%20%5C%5C%20&%20-1%20&%20%20%5C%5C%5Cend%7Bbmatrix%7D)
+$$
+\begin{bmatrix}
+  & -1 &  \\
+-1 & 4 & -1 \\
+  & -1 & 
+\end{bmatrix}
+$$
+
 
 Пиксели со значением, превысившим `threshold`, окрашиваются в белый, остальные – в черный.
 
@@ -64,7 +79,10 @@ $$
 
 Значение каждого из цветов пикселя `C[x0][y0]` определяется формулой
 
-![encoding](https://latex.codecogs.com/svg.image?C%5Bx_0%5D%5By_0%5D%20%3D%20%5Csum_%7Bx%3D0%2Cy%3D0%7D%5E%7Bwidth-1%2C%20height-1%7DC%5Bx%5D%5By%5D%5Cfrac%7B1%7D%7B2%5Cpi%5Csigma%5E2%7De%5E%7B-%5Cfrac%7B%5Cleft%7Cx_o-x%5Cright%7C%5E2%20%26plus%3B%20%5Cleft%7Cy_o-y%5Cright%7C%5E2%7D%7B2%5Csigma%5E2%7D%7D)
+$$
+C[x_0][y_0] = \sum_{x=0,\,y=0}^{width-1,\,height-1} C[x][y] \frac{1}{2\pi\sigma^2} e^{-\frac{(x_0-x)^2 + (y_0-y)^2}{2\sigma^2}}
+$$
+
 
 Существуют различные варианты релализации и оптимизации вычисления этого фильтра, описание есть [в Википедии](https://ru.wikipedia.org/wiki/Размытие_по_Гауссу).
 
