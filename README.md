@@ -39,15 +39,14 @@ image_processor/
 
 ## 🛠️ Сборка
 
-bash
 git clone https://github.com/Nikkfh5/image_processor.git
 cd image_processor
 mkdir build && cd build
 cmake ..
-cmake --build .
-Требуется CMake ≥ 3.10 и компилятор с поддержкой C++17.
+cmake --build ..
 
 ## Примеры
+
 Перевод в оттенки серого
 ./image_processor photos/cat.bmp out/cat_gs.bmp -gs
 Обрезка до 400×300 и размытие
