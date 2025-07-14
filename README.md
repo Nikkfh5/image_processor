@@ -46,11 +46,11 @@ cmake --build .
 Требуется CMake ≥ 3.10 и компилятор с поддержкой C++17.
 
 ## Примеры
-# Перевод в оттенки серого
+Перевод в оттенки серого
 ./image_processor photos/cat.bmp out/cat_gs.bmp -gs
-# Обрезка до 400×300 и размытие
+Обрезка до 400×300 и размытие
 ./image_processor in.bmp out.bmp -crop 400 300 -blur 2.0
-# Пикселизация + негатив
+Пикселизация + негатив
 ./image_processor in.bmp out.bmp -pixelate 12 -neg
 
 Если запустить без аргументов — выводится справка.
