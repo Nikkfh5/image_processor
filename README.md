@@ -39,11 +39,16 @@ image_processor/
 
 ## 🛠️ Сборка
 
-git clone https://github.com/Nikkfh5/image_processor.git
+`git clone https://github.com/Nikkfh5/image_processor.git`
+
 cd image_processor
+
 mkdir build && cd build
+
 cmake ..
+
 cmake --build ..
+
 
 ## Примеры
 
