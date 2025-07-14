@@ -39,7 +39,7 @@ image_processor/
 
 ## 🛠️ Сборка
 
-`git clone https://github.com/Nikkfh5/image_processor.git`
+git clone https://github.com/Nikkfh5/image_processor.git
 
 cd image_processor
 
@@ -54,8 +54,10 @@ cmake --build ..
 
 Перевод в оттенки серого
 ./image_processor photos/cat.bmp out/cat_gs.bmp -gs
+
 Обрезка до 400×300 и размытие
 ./image_processor in.bmp out.bmp -crop 400 300 -blur 2.0
+
 Пикселизация + негатив
 ./image_processor in.bmp out.bmp -pixelate 12 -neg
 
